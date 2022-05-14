@@ -1,0 +1,30 @@
+body {
+    background-color: powderblue;
+    }
+    .button,.button-2, .button-3 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    #student,#newStudent,#deleteIndex, #newStudentID {
+    color: red;
+    border: 5px solid black;
+    }
+
+    /*
+      [Bootstrap]
+      The classes for background colors are:
+       .bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light.
+
+       Note that background colors do not set the text color, so in some cases you'll want to use them together with a .text-* color clas
+       
+       The classes for text colors are:
+       .text-muted, .text-primary, .text-success, .text-info, .text-warning, .text-danger, .text-secondary, .text-white, .text-dark, .text-body (default body color/often black) and .text-light:
+    */

@@ -1,0 +1,11 @@
+What to test ->
+test every page of the app and every user interaction
+test functions and modules 
+
+/******** Testing Procedure *************/
+1. Import the function to test
+2. give an input to the function
+3. define what to expect as the outfa-pull-left
+4. check if the function produces the expected output 
+
+[input-expected output-assert the result]

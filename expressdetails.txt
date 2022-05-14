@@ -1,0 +1,95 @@
+Most likely used properties for Request object 
+.app -> reference to the express app object
+.baseUrl - basepath on which the app responds
+.body - contains data submitted in the request body (must be parsed & populated manually before you can access it)
+.cookies - contains the cookies sent by the request (needs the cookie-parser
+middleware)
+.hostname - the server hostname
+.ip - the server ip
+.method - the HTTP method used
+.params - the route named parameters 
+.path - the URL path
+.protocol - the request protocol
+.query - an object containing all the query strings used in the request
+.secure - true if the request is secure (uses HTTPS)
+.signedCookies-contains the signed cookies sent by the request (needs the cookieparser
+middleware)
+.xhr- true if the request is an XMLHttpRequest
+
+/****** Sending a response back to the client ****/
+
+Response.send() /(res.send())
+
+if you pass in an object or an array, it sets the application/json Content-Type header, and
+parses that parameter into JSON
+
+send() automatically sets the Content-Length HTTP response header.
+send() also automatically closes the connection.
+
+use end() to send an empty response 
+res.end()
+
+/********** Set the HTTP response status *****/
+use the Response.status()
+res.status(404).end()
+or 
+res.status(404).send('File not found)
+or use sendStatus() as a shortcut
+{
+    res.sendStatus(200) //equivalent to res.status(200).send('OK')
+    res.sendStatus(403) // === res.status(403).send('Forbidden')
+    res.sendStatus(404)// === res.status(404).send('Not Found')
+    res.sendStatus(500) // === res.status(500).send('Internal Server Error')
+}
+
+/******** Sending a JSON response **********/
+serve a JSON data using Node.js Express library
+
+When you listen for connections on a route in Express, the callback function will be invoked on
+every network call with a Request object instance and a Response object instance.
+
+use Response.json() to send JSON to the client 
+{
+    it accepts an object or array & converts it to JSON before sending it 
+    res.json({ username: 'Flavio' })
+}
+
+/************* Manage Cookies **********/
+Use the Response.cookie() method to manipulate your cookies.
+res.cookie('username', 'Flavio')
+{
+res.cookie('username', 'Flavio', { domain: '.flaviocopes.com', path: '/administrator', sec
+ure: true })
+res.cookie('username', 'Flavio', { expires: new Date(Date.now() + 900000), httpOnly: true
+})
+}
+
+A cookie can be cleared with
+res.clearCookie('username')
+
+/****************** Redirects **************/
+redirect to other pages server-signed
+ Response.redirect() method
+ res.redirect('/go-there') //creates a 302 redirect 
+ res.redirect(301, '/go-there') //creates a 302 redirect
+
+ You can specify an absolute path ( /go-there ), an absolute url ( https://anothersite.com ), a
+relative path ( go-there ) or use the .. to go back one level:
+res.redirect('../go-there')
+re.redirect('...)
+You can also redirect back to the Referer HTTP header value (defaulting to / if not set) using
+res.redirect('back')
+
+/************** Cross-Origin Resource Sharing ******
+require the cors package and pass it in as a middleware function to an endpoint request handler
+const express = require('express')
+const cors = require('cors')
+const app = express()
+app.get('/with-cors', cors(), (req, res, next) => {
+res.json({ msg: 'WHOAH with CORS it works! 􀘫 􀊦 ' })
+})
+
+
+/********** Middleware **********/
+a function that hooks into the routing process and performs some operationat some point depending on what it want to do
+commonly used to edit the request or response objects or terminate the request befoe it reaches the route handler <i class="fa fa-code" aria-hidden="true"></i>

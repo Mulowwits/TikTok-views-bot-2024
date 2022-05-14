@@ -1,0 +1,36 @@
+https://www.w3schools.com/bootstrap5/bootstrap_get_started.php
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+/******* Container class ******/
+.container -> provides a *responsive* fixed width container
+.container-fluid -> provides *full width container* spanning the entire width of the viewport
+
+/********* Container padding *******/ (default containers have only left & right padding hence spacing utilities is used )
+.pt-5 [ add a large top padding]
+
+/************ Container Border and Color **********/
+/**************  Grids ************/
+built with flexbox and allows up to 12 columns across the page
+make sure that the sum adds up to 12 or fewer
+
+/**************  Grid classes ***********/
+The first star (*) represents the responsiveness: sm, md, lg, xl or xxl, while the second star represents a number, which should add up to 12 for each row.
+<div class="row">
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+<div class="row">
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+
+<!-- Or let Bootstrap automatically handle the layout -->
+<div class="row">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+//get two various-width columns starting at tablets and scaling to large extra desktops
+The classes for text colors are: .text-muted, .text-primary, .text-success, .text-info, .text-warning, .text-danger, .text-secondary, .text-white, .text-dark, .text-body (default body color/often black) and .text-light

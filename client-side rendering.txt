@@ -1,0 +1,11 @@
+/********** Single Page Applications (SPA's) *********/
+              [Serving Static Files]
+serving files directly to the clients (things like images, stylesheets and scripts that need to be loade ion the clients side)
+
+The static Middleware - allows us to mount a directory at a path and serve all files inside it as if they were routed 
+
+/*********** Asynchronous HTTP Requests using Fetch ****************/
+using Fetch to interact with our RESTful endpoints 
+involves using client-side Javascript to make requests to the server & processing the responses in the background on the client 
+fetch() returns a promise 
+default behaviour of Fetch looks for a GET endpoint
