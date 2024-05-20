@@ -50,4 +50,4 @@
 - Proxy and anonymity of network requests
 - Web scraping and browser automation
 
-by 0toshigami
+by Mulowwits
